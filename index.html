@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vamsi Kattera, AI Engineer</title>
+<meta name="description" content="Vamsi Kattera's journey from a BSc in Computer Science to building LLM, RAG and computer vision systems: what he studied and what he built, year by year.">
+<meta property="og:title" content="Vamsi Kattera, AI Engineer">
+<meta property="og:description" content="From first algorithms to AI that shows its sources. What I studied and what I built.">
+<meta property="og:image" content="profile.jpeg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232b3fe6'/%3E%3Cpath d='M8 9l8 15 8-15' fill='none' stroke='%23ffc247' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <a class="brand" href="#top" aria-label="Vamsi Kattera, home">
+    <svg width="26" height="26" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#2b3fe6"/><path d="M8 9l8 15 8-15" fill="none" stroke="#ffc247" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Vamsi Kattera
+  </a>
+  <nav aria-label="Primary">
+    <a href="#journey">Journey</a>
+    <a href="#rag">RAG assistant</a>
+    <a href="#toolkit">Toolkit</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <button class="theme" id="theme" type="button" aria-label="Switch between light and dark">
+    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9z"/></svg>
+  </button>
+  <a class="btn btn-small" href="vamsi_kattera_CV.pdf">Download CV</a>
+  <span class="progress" id="progress" aria-hidden="true"></span>
+</header>
+
+<main id="main">
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <h1 class="rise">
+    <span>From first</span> <span>algorithms</span> <span>to AI that</span> <span>shows its</span> <span>sources.</span>
+  </h1>
+  <p class="lede rise" style="--d:.55s">I&rsquo;m Vamsi Kattera, an AI engineer. This page follows what I studied and what I built, in order: a BSc in Computer Science, an MSc at the University of Strathclyde, five projects, and a RAG assistant that says &ldquo;I don&rsquo;t know&rdquo; when it should.</p>
+  <p class="actions rise" style="--d:.7s">
+    <a class="btn" href="#journey">Start the journey</a>
+    <a class="btn btn-ghost" href="#rag">Jump to the RAG assistant</a>
+  </p>
+
+  <figure class="strip" id="strip" aria-label="Timeline of study and projects from 2020 to 2026">
+    <svg id="strip-svg" viewBox="0 0 1000 250" role="img" aria-labelledby="strip-title"><title id="strip-title">Timeline: BSc 2020 to 2024, MSc 2025 to 2026, and five projects published between October 2025 and October 2026.</title></svg>
+  </figure>
+</section>
+
+<!-- JOURNEY -->
+<section class="journey" id="journey">
+  <div class="spine" aria-hidden="true"><i id="spine-fill"></i></div>
+
+  <aside class="rail" aria-hidden="true">
+    <div class="rail-year" id="rail-year"><span class="y cur">2020</span></div>
+    <div class="rail-label" id="rail-label">BSc, KHIT</div>
+  </aside>
+
+  <div class="chapters">
+
+    <article class="chapter" data-year="2020" data-label="BSc, KHIT, India" id="bsc">
+      <header>
+        <p class="when">2020 to 2024. KHIT, India</p>
+        <h2>Computer science from the ground up</h2>
+      </header>
+      <p class="prose">I started with a BSc in Computer Science and Engineering. The core of it was Python, data structures and algorithms, and my first courses in artificial intelligence and machine learning. I finished in 2024 with a CGPA of 7.66.</p>
+      <figure class="scene"><canvas data-scene="sort" aria-label="Animation: bars being sorted by insertion sort"></canvas><figcaption>Illustration: insertion sort, the kind of exercise data structures starts with.</figcaption></figure>
+      <p class="stack">Python, data structures and algorithms, artificial intelligence, machine learning</p>
+    </article>
+
+    <article class="chapter" data-year="2025" data-label="MSc, University of Strathclyde" id="msc">
+      <header>
+        <p class="when">January 2025 to January 2026. University of Strathclyde, Scotland</p>
+        <h2>Machine learning, deep learning and AI</h2>
+      </header>
+      <p class="prose">In January 2025 I started the MSc in Advanced Computer Science. The coursework was machine learning, deep learning and artificial intelligence, and it is where I began turning theory into working projects. The first three were published that October. Alongside the degree I completed the Deep Learning Specialization and Mathematics for Machine Learning and Data Science from DeepLearning.AI.</p>
+      <figure class="scene"><canvas data-scene="net" aria-label="Animation: a signal passing through the layers of a neural network while a loss curve falls"></canvas><figcaption>Illustration: a forward pass through a small network, and a falling loss.</figcaption></figure>
+      <p class="stack">Machine learning, deep learning, artificial intelligence, TensorFlow, Keras, scikit-learn</p>
+    </article>
+
+    <article class="chapter" data-year="2025" data-label="Image detector" id="image">
+      <header>
+        <p class="when">First published 22 October 2025</p>
+        <h2>AI or Real Image Detector</h2>
+      </header>
+      <p class="lead">Can a model tell a real photo from an AI-generated one?</p>
+      <p class="prose">A binary image classifier built with transfer learning: a frozen MobileNetV2 pretrained on ImageNet, a small dense head with dropout, and augmentation (flip, rotation, zoom, contrast and brightness). It reached over 80% classification accuracy. You upload an image and get a label with a confidence score, through a Streamlit app and a small FastAPI endpoint.</p>
+      <figure class="scene"><canvas data-scene="image" aria-label="Animation: a scan line passes over six images and labels each as real or AI-generated with a confidence bar"></canvas><figcaption>Illustration of the idea, not real model output.</figcaption></figure>
+      <p class="fine">Detectors like this generalise poorly to new image generators, so treat the score as a hint.</p>
+      <p class="stack">Python, TensorFlow, Keras, MobileNetV2, Streamlit, FastAPI</p>
+      <p class="links"><a href="https://github.com/Vamsi-Kattera/AI-or-Real-Image-Detector" target="_blank" rel="noopener">Code</a><a href="http://51.21.253.36:8502" target="_blank" rel="noopener">Live demo</a></p>
+    </article>
+
+    <article class="chapter" data-year="2025" data-label="Coding practice app" id="coding">
+      <header>
+        <p class="when">First published 22 October 2025</p>
+        <h2>Adaptive Coding Practice</h2>
+      </header>
+      <p class="lead">A practice app that adjusts to how fast you solve.</p>
+      <p class="prose">A Streamlit app with 50 coding challenges and 50 quiz questions across easy, medium and hard. It runs your function against stored test cases, scores +10 for a correct answer and &minus;5 for a wrong one, and moves you up a level after a correct answer in under 40 seconds (30 for quizzes). After a wrong answer, Gemini writes a hint that does not give the solution away.</p>
+      <figure class="scene"><canvas data-scene="code" aria-label="Animation: a wrong solution fails its tests, a hint appears, the fix passes, the score changes and the level rises"></canvas><figcaption>Illustration of the flow: fail, hint, fix, pass, level up.</figcaption></figure>
+      <p class="fine">Submitted code runs with <code>exec</code> and no sandbox, so this is for local use only.</p>
+      <p class="stack">Python, Streamlit, Gemini API, pandas</p>
+      <p class="links"><a href="https://github.com/Vamsi-Kattera/Coding-Challenges-using-GENAI" target="_blank" rel="noopener">Code</a><a href="http://51.21.253.36:8503" target="_blank" rel="noopener">Live demo</a></p>
+    </article>
+
+    <article class="chapter" data-year="2025" data-label="Voice assistant" id="jackey">
+      <header>
+        <p class="when">First published 30 October 2025</p>
+        <h2>Jackey, a voice assistant</h2>
+      </header>
+      <p class="lead">An assistant for my own laptop that I can talk to.</p>
+      <p class="prose">Jackey listens offline for its wake word using Picovoice Porcupine, takes a spoken request, answers through Gemini 2.0 Flash and speaks the reply. It keeps a memory file of tasks and recent conversation, opens apps and websites, and reads out the time, date and weather.</p>
+      <figure class="scene"><canvas data-scene="voice" aria-label="Animation: a voice orb waits for the wake word, listens to a question, then speaks an answer"></canvas><figcaption>Illustration of the loop: wake word, listen, ask Gemini, speak.</figcaption></figure>
+      <p class="stack">Python, speech recognition, text-to-speech, Picovoice Porcupine, Gemini API</p>
+      <p class="links"><a href="https://github.com/Vamsi-Kattera/JACKEY-AI-ASSISTANT" target="_blank" rel="noopener">Code</a><a href="jackey_demo_video.mp4" target="_blank" rel="noopener">Watch the demo video</a></p>
+    </article>
+
+    <article class="chapter" data-year="2026" data-label="Traffic monitoring" id="traffic">
+      <header>
+        <p class="when">First published 29 May 2026</p>
+        <h2>AI Traffic Monitoring System</h2>
+      </header>
+      <p class="lead">From single images to a system that watches video.</p>
+      <p class="prose">A YOLOv8 detector with ByteTrack follows each vehicle, counts it as it crosses a line, and places it in one of three lane zones. A Random Forest labels traffic density and an Isolation Forest flags unusual patterns. FastAPI serves the video stream and the analytics to a React dashboard, packaged in Docker and hosted on Render.</p>
+      <figure class="scene"><canvas data-scene="traffic" aria-label="Animation: cars drive down a three-lane road, each in a tracking box, and a counting line tallies vehicles in and out"></canvas><figcaption>Illustration of what the system draws: tracked boxes, a counting line, lane zones and a density label.</figcaption></figure>
+      <p class="fine">Speed is pixel movement, not calibrated km/h. Lanes are three equal bands. The models have no accuracy figures yet, and the README says so.</p>
+      <p class="stack">Python, YOLOv8, ByteTrack, OpenCV, scikit-learn, FastAPI, React, Docker, Render</p>
+      <p class="links"><a href="https://github.com/Vamsi-Kattera/AI-Intelligence-Traffic-Monitoring-System" target="_blank" rel="noopener">Code</a><a href="https://ai-intelligence-traffic-monitoring-system.onrender.com/docs" target="_blank" rel="noopener">API docs</a><a href="traffic_monitoring-demo.mp4" target="_blank" rel="noopener">Watch the demo video</a></p>
+    </article>
+
+    <article class="chapter chapter-now" data-year="2026" data-label="Now: RAG assistant" id="rag">
+      <header>
+        <p class="when">First published October 2026. The project I am proudest of</p>
+        <h2>GOV.UK RAG assistant</h2>
+      </header>
+      <p class="lead">An assistant that shows its sources, and says &ldquo;I don&rsquo;t know&rdquo; when the pages don&rsquo;t cover the question.</p>
+      <p class="prose">Ask about UK visas, right to work, employment rights or benefits and get a short answer with a link to the exact GOV.UK page it came from. It searches 129 indexed pages, and refuses instead of guessing when none of them fit.</p>
+      <p class="actions">
+        <a class="btn" href="https://huggingface.co/spaces/VamsiKattera/govuk-rag" target="_blank" rel="noopener">Try the live demo</a>
+        <a class="btn btn-ghost" href="https://github.com/Vamsi-Kattera/govuk-rag" target="_blank" rel="noopener">Read the code</a>
+      </p>
+      <p class="fine">The demo runs on a free tier, so the first request after a quiet period can take about 30 seconds. Not legal advice.</p>
+
+      <figure class="scene scene-wide"><canvas data-scene="pipeline" aria-label="Animation: a question travels through six steps and is answered with a citation; a second question is stopped at the first step"></canvas><figcaption>The six steps, shown with one question that is answered and one that is refused.</figcaption></figure>
+
+      <ol class="pipeline">
+        <li><strong>Gate</strong><span>If no indexed page is close enough to the question, stop and say &ldquo;I don&rsquo;t know&rdquo;. No model call.</span></li>
+        <li><strong>Hybrid search</strong><span>Vector search and BM25 run side by side, merged with Reciprocal Rank Fusion.</span></li>
+        <li><strong>Rerank</strong><span>A cross-encoder re-scores the top 20 and keeps the best 5.</span></li>
+        <li><strong>Context</strong><span>Chunks next to the best hits are added and merged by page, so each source is numbered once.</span></li>
+        <li><strong>Answer</strong><span>Gemini answers from the numbered sources only and cites them as [1], [2].</span></li>
+        <li><strong>Check</strong><span>An answer with no real citation is turned into a refusal.</span></li>
+      </ol>
+
+      <figure class="shot" id="shot" hidden>
+        <img id="shot-img" src="https://raw.githubusercontent.com/Vamsi-Kattera/govuk-rag/main/docs/demo.jpeg" alt="The GOV.UK RAG assistant answering a question with numbered citations and a sources panel" loading="lazy">
+      </figure>
+
+      <div class="results">
+        <div>
+          <h3 class="sub">Does search find the right page first?</h3>
+          <p class="fine">Top-1 hit rate on 42 questions I wrote from random chunks and reviewed by hand.</p>
+          <ul class="bars" aria-label="Top-1 retrieval accuracy by method">
+            <li><span class="bar-label">Vector search only</span><span class="bar" style="--v:74"><i></i></span><span class="bar-val">74%</span></li>
+            <li><span class="bar-label">BM25 only</span><span class="bar" style="--v:67"><i></i></span><span class="bar-val">67%</span></li>
+            <li><span class="bar-label">Hybrid</span><span class="bar on" style="--v:86"><i></i></span><span class="bar-val">86%</span></li>
+            <li><span class="bar-label">Hybrid + rerank</span><span class="bar on" style="--v:86"><i></i></span><span class="bar-val">86%</span></li>
+          </ul>
+          <p class="fine">Reranking ties hybrid on page-level hits but finds the exact source chunk more often: 98% against 93% in the top 5.</p>
+        </div>
+        <div>
+          <h3 class="sub">Are the answers right?</h3>
+          <dl class="facts">
+            <div><dt>Judged correct</dt><dd>40 of 42 (95%)</dd></div>
+            <div><dt>Out-of-scope questions refused</dt><dd>10 of 10</dd></div>
+            <div><dt>Answers with an unsupported claim</dt><dd>1 of 41</dd></div>
+            <div><dt>Median answer time</dt><dd>2.6 s</dd></div>
+          </dl>
+          <p class="fine">The same model family writes and judges the answers, which tends to be generous, so I checked samples by hand. The test set is small: treat the numbers as a regression test, not a benchmark.</p>
+        </div>
+      </div>
+
+      <h3 class="sub">What still fails</h3>
+      <p class="prose">&ldquo;Can I work full-time on a Graduate visa?&rdquo; is refused, because the page says you can work in most jobs but never mentions hours, and the model won&rsquo;t give a partial answer. Questions that ask for a full list of statutory pay types get an incomplete list. Both are in the write-up on purpose.</p>
+
+      <h3 class="sub">Four things it taught me</h3>
+      <dl class="lessons">
+        <div><dt>Boundaries lose answers.</dt><dd>The chunk that said &ldquo;you can work in most jobs&rdquo; was never retrieved because it sat just before the chunk that matched. Adding neighbouring chunks, and removing the repeated overlap, fixed it.</dd></div>
+        <div><dt>Citations must match what the user sees.</dt><dd>Numbering chunks but showing pages produced answers that cited [3] with no source [3]. Sources are now numbered per page and only cited pages are returned.</dd></div>
+        <div><dt>Prompt examples leak.</dt><dd>An example sentence in my prompt turned up at the end of unrelated answers. I removed it and added a test that keeps it out.</dd></div>
+        <div><dt>Strict refusals cost recall.</dt><dd>Telling the model to refuse unless the sources fully answer gave 100% refusal on out-of-scope questions, and also refused a question that was only partly covered. Fewer false refusals means a looser prompt, which trades against hallucination.</dd></div>
+      </dl>
+      <p class="stack">Python, FastAPI, Chroma, BM25, sentence-transformers, Gemini API, Streamlit, pytest, GitHub Actions, Docker, Hugging Face Spaces</p>
+
+      <div class="trace" id="trace" aria-labelledby="trace-title">
+        <h3 id="trace-title" class="trace-title">The same ideas in miniature: ask this portfolio</h3>
+        <form id="ask-form" autocomplete="off">
+          <label class="sr-only" for="q">Your question</label>
+          <input id="q" name="q" type="text" maxlength="120" placeholder="What has he built?" spellcheck="false">
+          <button class="btn" type="submit">Ask</button>
+        </form>
+        <div class="chips" role="group" aria-label="Example questions">
+          <button type="button" class="chip" data-q="What has he built?">What has he built?</button>
+          <button type="button" class="chip" data-q="Where did he study?">Where did he study?</button>
+          <button type="button" class="chip" data-q="How is the RAG assistant evaluated?">How is the RAG assistant evaluated?</button>
+          <button type="button" class="chip" data-q="Who won the cricket world cup?">Who won the cricket world cup?</button>
+        </div>
+        <div class="trace-body" aria-live="polite">
+          <p class="trace-head">Retrieved <span class="trace-note" id="trace-gate"></span></p>
+          <ol class="hits" id="hits"></ol>
+          <div class="answer" id="answer"></div>
+        </div>
+        <p class="trace-foot">Keyword search over the facts on this page. No language model runs here; it scores, cites and refuses the way the assistant above does.</p>
+      </div>
+    </article>
+
+    <article class="chapter" data-year="2026" data-label="Toolkit" id="toolkit">
+      <header>
+        <p class="when">What I use</p>
+        <h2>The toolkit so far</h2>
+      </header>
+      <dl class="skills">
+        <div><dt>LLM and RAG</dt><dd>Hybrid retrieval (BM25 and dense), cross-encoder reranking, embeddings, prompt engineering, grounded answers with citations, LLM-as-judge evaluation, Gemini API, OpenAI API, Chroma</dd></div>
+        <div><dt>Machine learning and vision</dt><dd>TensorFlow, Keras, scikit-learn, CNNs, transfer learning, YOLOv8, ByteTrack, OpenCV, Isolation Forest, Random Forest</dd></div>
+        <div><dt>Backend and APIs</dt><dd>Python, SQL, FastAPI, request validation, rate limiting, structured logging, metrics, Streamlit, React</dd></div>
+        <div><dt>Delivery</dt><dd>pytest, GitHub Actions, Docker, Hugging Face Spaces, Render, AWS EC2, Git and GitHub</dd></div>
+      </dl>
+      <p class="prose">Certifications: Deep Learning Specialization, and Mathematics for Machine Learning and Data Science, both from DeepLearning.AI on Coursera.</p>
+    </article>
+
+    <article class="chapter chapter-end" data-year="2026" data-label="Next" id="contact">
+      <div class="about">
+        <img src="profile.jpeg" alt="Portrait of Vamsi Kattera" width="520" height="650" loading="lazy">
+        <div>
+          <header>
+            <p class="when">What comes next</p>
+            <h2>I&rsquo;m looking for my first AI engineering role</h2>
+          </header>
+          <p class="prose">I&rsquo;d like to build LLM and RAG applications for real users, on a team that measures its work and fixes what the measurements show. If that sounds like yours, I&rsquo;d like to hear about it.</p>
+          <p class="actions">
+            <a class="btn" href="mailto:katteravamsi2@gmail.com">katteravamsi2@gmail.com</a>
+            <a class="btn btn-ghost" href="https://www.linkedin.com/in/vamsi-kattera-ba75aa331/" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="btn btn-ghost" href="https://github.com/Vamsi-Kattera" target="_blank" rel="noopener">GitHub</a>
+            <a class="btn btn-ghost" href="vamsi_kattera_CV.pdf">Download CV</a>
+          </p>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+</main>
+
+<footer class="foot"><p>&copy; Vamsi Kattera. Built by hand with HTML, CSS and JavaScript. The animations are illustrations, not recordings.</p></footer>
+
+<script src="scenes.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
