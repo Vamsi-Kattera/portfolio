@@ -25,6 +25,7 @@
   <nav aria-label="Primary">
     <a href="#journey">Journey</a>
     <a href="#rag">RAG assistant</a>
+    <a href="#obelus">Obelus</a>
     <a href="#toolkit">Toolkit</a>
     <a href="#contact">Contact</a>
   </nav>
@@ -42,14 +43,14 @@
   <h1 class="rise">
     <span>From first</span> <span>algorithms</span> <span>to AI that</span> <span>shows its</span> <span>sources.</span>
   </h1>
-  <p class="lede rise" style="--d:.55s">I&rsquo;m Vamsi Kattera, an AI engineer. This page follows what I studied and what I built, in order: a BSc in Computer Science, an MSc at the University of Strathclyde, five projects, and a RAG assistant that says &ldquo;I don&rsquo;t know&rdquo; when it should.</p>
+  <p class="lede rise" style="--d:.55s">I&rsquo;m Vamsi Kattera, an AI engineer. This page follows what I studied and what I built, in order: a BSc in Computer Science, an MSc at the University of Strathclyde, six projects, and AI tools that show their sources and say &ldquo;I don&rsquo;t know&rdquo; when they should.</p>
   <p class="actions rise" style="--d:.7s">
     <a class="btn" href="#journey">Start the journey</a>
     <a class="btn btn-ghost" href="#rag">Jump to the RAG assistant</a>
   </p>
 
   <figure class="strip" id="strip" aria-label="Timeline of study and projects from 2020 to 2026">
-    <svg id="strip-svg" viewBox="0 0 1000 250" role="img" aria-labelledby="strip-title"><title id="strip-title">Timeline: BSc 2020 to 2024, MSc 2025 to 2026, and five projects published between October 2025 and October 2026.</title></svg>
+    <svg id="strip-svg" viewBox="0 0 1000 250" role="img" aria-labelledby="strip-title"><title id="strip-title">Timeline: BSc 2020 to 2024, MSc 2025 to 2026, and six projects published between October 2025 and November 2026.</title></svg>
   </figure>
 </section>
 
@@ -135,7 +136,7 @@
       <p class="links"><a href="https://github.com/Vamsi-Kattera/AI-Intelligence-Traffic-Monitoring-System" target="_blank" rel="noopener">Code</a><a href="https://ai-intelligence-traffic-monitoring-system.onrender.com/docs" target="_blank" rel="noopener">API docs</a><a href="traffic_monitoring-demo.mp4" target="_blank" rel="noopener">Watch the demo video</a></p>
     </article>
 
-    <article class="chapter chapter-now" data-year="2026" data-label="Now: RAG assistant" id="rag">
+    <article class="chapter" data-year="2026" data-label="RAG assistant" id="rag">
       <header>
         <p class="when">First published October 2026. The project I am proudest of</p>
         <h2>GOV.UK RAG assistant</h2>
@@ -210,6 +211,7 @@
           <button type="button" class="chip" data-q="What has he built?">What has he built?</button>
           <button type="button" class="chip" data-q="Where did he study?">Where did he study?</button>
           <button type="button" class="chip" data-q="How is the RAG assistant evaluated?">How is the RAG assistant evaluated?</button>
+          <button type="button" class="chip" data-q="How is Obelus evaluated?">How is Obelus evaluated?</button>
           <button type="button" class="chip" data-q="Who won the cricket world cup?">Who won the cricket world cup?</button>
         </div>
         <div class="trace-body" aria-live="polite">
@@ -221,13 +223,74 @@
       </div>
     </article>
 
+    <article class="chapter chapter-now" data-year="2026" data-label="Now: Obelus" id="obelus">
+      <header>
+        <p class="when">First published November 2026. Measured on a held-out test set</p>
+        <h2>Obelus, a contract-review tool</h2>
+      </header>
+      <p class="lead">It finds a clause in a contract, quotes the exact words, and says &ldquo;not found&rdquo; when it cannot.</p>
+      <p class="prose">Paste a contract extract, choose up to three clauses, and Obelus returns the passages with their positions, highlighted in your text. Every quote is checked to exist word for word in the contract, so it cannot invent one. I measured it against 510 contracts labelled by legal experts (CUAD), compared it with a plain keyword search, and ran the final test once, on 102 contracts I had never tuned on.</p>
+      <p class="actions">
+        <a class="btn" href="https://huggingface.co/spaces/VamsiKattera/obelus" target="_blank" rel="noopener">Try the live demo</a>
+        <a class="btn btn-ghost" href="https://github.com/Vamsi-Kattera/Obelus" target="_blank" rel="noopener">Read the code</a>
+      </p>
+      <p class="fine">The demo runs on a free tier with a few analyses per visitor per hour. It sends text to Google&rsquo;s Gemini API, so please don&rsquo;t paste confidential contracts. It highlights passages for a human reviewer and is not legal advice.</p>
+
+      <ol class="pipeline">
+        <li><strong>Search</strong><span>The contract is cut into overlapping 1,200-character chunks, and BM25 keeps the six that best match the clause.</span></li>
+        <li><strong>Quote</strong><span>Gemini returns whether the clause is there and the exact quotes, as structured output.</span></li>
+        <li><strong>Check</strong><span>Each quote must be found in the original text. One that is not is dropped, and with nothing left the answer is &ldquo;not found&rdquo;.</span></li>
+      </ol>
+
+      <div class="results">
+        <div>
+          <h3 class="sub">How much of the experts&rsquo; text does it find?</h3>
+          <p class="fine">Span F1 on 102 held-out test contracts: keyword search alone against Obelus.</p>
+          <ul class="bars" aria-label="Span F1 on the held-out test split, keyword search against Obelus, for four clause types">
+            <li><span class="bar-label">Liability: BM25</span><span class="bar" style="--v:46"><i></i></span><span class="bar-val">46%</span></li>
+            <li><span class="bar-label">Liability: Obelus</span><span class="bar on" style="--v:71"><i></i></span><span class="bar-val">71%</span></li>
+            <li><span class="bar-label">Termination: BM25</span><span class="bar" style="--v:22"><i></i></span><span class="bar-val">22%</span></li>
+            <li><span class="bar-label">Termination: Obelus</span><span class="bar on" style="--v:75"><i></i></span><span class="bar-val">75%</span></li>
+            <li><span class="bar-label">Audit: BM25</span><span class="bar" style="--v:43"><i></i></span><span class="bar-val">43%</span></li>
+            <li><span class="bar-label">Audit: Obelus</span><span class="bar on" style="--v:59"><i></i></span><span class="bar-val">59%</span></li>
+            <li><span class="bar-label">Assignment: BM25</span><span class="bar" style="--v:39"><i></i></span><span class="bar-val">39%</span></li>
+            <li><span class="bar-label">Assignment: Obelus</span><span class="bar on" style="--v:68"><i></i></span><span class="bar-val">68%</span></li>
+          </ul>
+          <p class="fine">Liability cap, termination for convenience, audit rights and anti-assignment: four of the 41 clause types in the dataset.</p>
+        </div>
+        <div>
+          <h3 class="sub">What else the test showed</h3>
+          <dl class="facts">
+            <div><dt>Held-out test contracts</dt><dd>102</dd></div>
+            <div><dt>Clause types measured</dt><dd>4 of 41</dd></div>
+            <div><dt>Liability cap present? F1</dt><dd>91% to 86%</dd></div>
+            <div><dt>Tests passing</dt><dd>55</dd></div>
+          </dl>
+          <p class="fine">The samples are small, 34 to 80 contracts per clause, so differences of a few points are noise. Differences of 20 points or more are not.</p>
+        </div>
+      </div>
+
+      <h3 class="sub">What still fails</h3>
+      <p class="prose">On liability caps the model says &ldquo;present&rdquo; in more contracts than the experts did, so the yes or no got worse (91% to 86%) even though the quotes got much better. I also tried filtering with the keyword score before calling the model, and it did not beat the simpler method, so I dropped it. A span F1 of 59% to 75% is useful for someone who reads the highlight and not good enough to trust unreviewed.</p>
+
+      <h3 class="sub">Four things it taught me</h3>
+      <dl class="lessons">
+        <div><dt>Read the misses before changing the model.</dt><dd>My first prompt found only 31% of liability caps. Sorting every miss showed the experts&rsquo; label also covers excluding consequential damages, which my description left out. Fixing the definition, not the model, moved the score.</dd></div>
+        <div><dt>Keep the test set for the end.</dt><dd>Only one clause was tuned on the dev split, and I ran the test split once. The results matched, so I can say the gain is not an artefact of tuning.</dd></div>
+        <div><dt>Say what got worse.</dt><dd>One number went down and a clever idea did not help. Both are in the README, because a table with only good news is not worth much.</dd></div>
+        <div><dt>A free tier is a design constraint.</dt><dd>The daily quota stopped my first full run. I added a clean stop, a disk cache that makes reruns free, and limits on the public demo so a stranger cannot use it all up.</dd></div>
+      </dl>
+      <p class="stack">Python, FastAPI, BM25, Gemini API, Pydantic, pytest, GitHub Actions, Docker, Hugging Face Spaces</p>
+      <p class="links"><a href="https://github.com/Vamsi-Kattera/Obelus" target="_blank" rel="noopener">Code and results</a><a href="https://huggingface.co/spaces/VamsiKattera/obelus" target="_blank" rel="noopener">Live demo</a></p>
+    </article>
+
     <article class="chapter" data-year="2026" data-label="Toolkit" id="toolkit">
       <header>
         <p class="when">What I use</p>
         <h2>The toolkit so far</h2>
       </header>
       <dl class="skills">
-        <div><dt>LLM and RAG</dt><dd>Hybrid retrieval (BM25 and dense), cross-encoder reranking, embeddings, prompt engineering, grounded answers with citations, LLM-as-judge evaluation, Gemini API, OpenAI API, Chroma</dd></div>
+        <div><dt>LLM and RAG</dt><dd>Hybrid retrieval (BM25 and dense), cross-encoder reranking, embeddings, prompt engineering, grounded answers with citations, quote verification, structured output, LLM-as-judge evaluation, evaluation against expert labels, Gemini API, OpenAI API, Chroma</dd></div>
         <div><dt>Machine learning and vision</dt><dd>TensorFlow, Keras, scikit-learn, CNNs, transfer learning, YOLOv8, ByteTrack, OpenCV, Isolation Forest, Random Forest</dd></div>
         <div><dt>Backend and APIs</dt><dd>Python, SQL, FastAPI, request validation, rate limiting, structured logging, metrics, Streamlit, React</dd></div>
         <div><dt>Delivery</dt><dd>pytest, GitHub Actions, Docker, Hugging Face Spaces, Render, AWS EC2, Git and GitHub</dd></div>

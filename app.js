@@ -37,7 +37,8 @@
       { t: 2025.815, name: "Adaptive Coding Practice", href: "#coding", dy: 236, side: "end", d: 2.2 },
       { t: 2025.832, name: "Jackey voice assistant", href: "#jackey", dy: 254, side: "end", d: 2.4 },
       { t: 2026.408, name: "Traffic monitoring", href: "#traffic", dy: 96, side: "end", d: 2.7, up: true },
-      { t: 2026.775, name: "GOV.UK RAG assistant", href: "#rag", dy: 66, side: "end", d: 3.0, up: true, now: true }
+      { t: 2026.775, name: "GOV.UK RAG assistant", href: "#rag", dy: 66, side: "end", d: 3.0, up: true },
+      { t: 2026.86, name: "Obelus contract review", href: "#obelus", dy: 36, side: "end", d: 3.3, up: true, now: true }
     ];
     P.forEach(function (p) {
       var a = el("a", { href: p.href, "aria-label": p.name });
@@ -101,7 +102,7 @@
 
   /* "Ask this portfolio": tiny retrieval demo over the facts on this page (TF-IDF, a gate, cited answers). No language model. */
   var CHUNKS = [
-    { title: "Projects overview", href: "#journey", text: "Projects built: an AI or real image detector, an adaptive coding practice app, Jackey the voice assistant, an AI traffic monitoring system and a GOV.UK RAG assistant." },
+    { title: "Projects overview", href: "#journey", text: "Projects built: an AI or real image detector, an adaptive coding practice app, Jackey the voice assistant, an AI traffic monitoring system, a GOV.UK RAG assistant and Obelus, a contract-review tool." },
     { title: "BSc Computer Science and Engineering", href: "#bsc", text: "BSc in Computer Science and Engineering at KHIT in India, 2020 to 2024, CGPA 7.66. Studied Python, data structures and algorithms, artificial intelligence and machine learning." },
     { title: "MSc Advanced Computer Science", href: "#msc", text: "MSc in Advanced Computer Science at the University of Strathclyde in Scotland, January 2025 to January 2026. Studied machine learning, deep learning and artificial intelligence." },
     { title: "Certifications", href: "#toolkit", text: "Completed the Deep Learning Specialization and Mathematics for Machine Learning and Data Science from DeepLearning.AI on Coursera." },
@@ -110,6 +111,9 @@
     { title: "Jackey voice assistant", href: "#jackey", text: "A voice assistant with offline wake-word detection using Picovoice Porcupine, answers through Gemini 2.0 Flash, memory of tasks and conversation, opens apps, reports time and weather. First published October 2025." },
     { title: "AI Traffic Monitoring System", href: "#traffic", text: "Computer vision project. YOLOv8 and ByteTrack detect, track and count vehicles, lane-zone counts, a Random Forest for traffic density and an Isolation Forest for unusual traffic, FastAPI with a React dashboard on Render. First published May 2026." },
     { title: "GOV.UK RAG assistant", href: "#rag", text: "A retrieval-augmented generation assistant over 129 GOV.UK pages on UK visas, right to work, employment rights and benefits. It answers with citations to the exact page and refuses when the pages do not cover the question." },
+    { title: "Obelus contract-review tool", href: "#obelus", text: "Obelus is a contract-review tool. Obelus finds clauses in contracts and quotes the exact text. Every quote is checked to exist word for word in the contract, and it says not found when it cannot quote the clause. It uses BM25 to pick chunks, Gemini with structured output to quote, and a check that drops invented quotes. A FastAPI service with a live demo on Hugging Face Spaces. First published November 2026." },
+    { title: "How Obelus is evaluated", href: "#obelus", text: "Obelus is evaluated on 510 expert-labelled contracts from CUAD, split by contract into train, dev and test. On 102 held-out test contracts, span F1 rose from 46 to 71 percent for liability caps, 22 to 75 for termination for convenience, 43 to 59 for audit rights and 39 to 68 for anti-assignment, against a BM25 keyword baseline. Presence F1 for liability caps fell from 91 to 86 percent. The Obelus test split was run once, so the evaluation is held out." },
+    { title: "What Obelus taught me", href: "#obelus", text: "Reading the misses showed that my clause definition was narrower than the experts, which cost recall, and fixing the definition mattered more than changing the model. Keeping the test set for the end, saying what got worse, and treating the free-tier daily quota as a design constraint with a cache and demo limits." },
     { title: "Hybrid retrieval", href: "#rag", text: "Combines vector search and BM25 with Reciprocal Rank Fusion, then reranks with a cross-encoder. Top-1 retrieval accuracy rose from 74% with vector search only to 86% on a 42-question test set." },
     { title: "How the RAG assistant is evaluated", href: "#rag", text: "Evaluated on 42 hand-reviewed questions plus 10 out-of-scope ones: 95% of answers judged correct, all 10 out-of-scope questions refused, median answer time 2.6 seconds. The judge is the same model family that writes the answers, so samples were also checked by hand." },
     { title: "Saying I don't know", href: "#rag", text: "A similarity gate stops unrelated questions before any model call, and a cite-or-abstain rule turns any answer without a real citation into a refusal." },
